@@ -1,0 +1,197 @@
+﻿@{
+    ViewBag.Title = "View Users";
+}
+<div class="box">
+    <div class="box-body">
+        <table>
+            <tr>
+                <td width="100px">
+                    <a href="~/User/Add" class="btn btn-block btn-danger">Add User</a>
+                </td>
+            </tr>
+            <tr><td height="10px">&nbsp;</td></tr>
+        </table>
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Phone No.</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>User Group</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A John Doe</td>
+                    <td>0723554765</td>
+                    <td>22</td>
+                    <td> Male</td>
+                    <td>Administrator</td>
+                    <td class="btn-group" width="89%">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Edit", "Edit", "User")</li>
+                            <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alexander Pierce</td>
+                    <td>0734726248</td>
+                    <td>34</td>
+                    <td>Male</td>
+                    <td>Accounts</td>
+                    <td class="btn-group" width="89%">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Edit", "Edit", "User")</li>
+                            <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alice</td>
+                    <td>07654456876</td>
+                    <td>32</td>
+                    <td>Female</td>
+                    <td>Manager</td>
+                    <td class="btn-group" width="89%">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Edit", "Edit", "User")</li>
+                            <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>A John Doe</td>
+                    <td>0723554765</td>
+                    <td>22</td>
+                    <td> Male</td>
+                    <td>Administrator</td>
+                    <td class="btn-group" width="89%">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Edit", "Edit", "User")</li>
+                            <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alexander Pierce</td>
+                    <td>0734726248</td>
+                    <td>34</td>
+                    <td>Male</td>
+                    <td>Accounts</td>
+                    <td class="btn-group" width="89%">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Edit", "Edit", "User")</li>
+                            <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alice</td>
+                    <td>07654456876</td>
+                    <td>32</td>
+                    <td>Female</td>
+                    <td>Manager</td>
+                    <td class="btn-group" width="89%">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Edit", "Edit", "User")</li>
+                            <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>A John Doe</td>
+                    <td>0723554765</td>
+                    <td>22</td>
+                    <td> Male</td>
+                    <td>Administrator</td>
+                    <td class="btn-group" width="89%">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Edit", "Edit", "User")</li>
+                            <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alexander Pierce</td>
+                    <td>0734726248</td>
+                    <td>34</td>
+                    <td>Male</td>
+                    <td>Accounts</td>
+                    <td class="btn-group" width="89%">
+                        <button data-toggle="dropdown" class="btn btn-primary -toggle">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Edit", "Edit", "User")</li>
+                            <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alice</td>
+                    <td>07654456876</td>
+                    <td>32</td>
+                    <td>Female</td>
+                    <td>Manager</td>
+                    <td class="btn-group" width="89%">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Edit", "Edit", "User")</li>
+                            <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>A John Doe</td>
+                    <td>0723554765</td>
+                    <td>22</td>
+                    <td> Male</td>
+                    <td>Administrator</td>
+                    <td class="btn-group" width="89%">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Edit", "Edit", "User")</li>
+                            <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alexander Pierce</td>
+                    <td>0734726248</td>
+                    <td>34</td>
+                    <td>Male</td>
+                    <td>Accounts</td>
+                    <td class="btn-group" width="89%">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Edit", "Edit", "User")</li>
+                            <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alice</td>
+                    <td>07654456876</td>
+                    <td>32</td>
+                    <td>Female</td>
+                    <td>Manager</td>
+                    <td class="btn-group" width="89%">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Edit", "Edit", "User")</li>
+                            <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
