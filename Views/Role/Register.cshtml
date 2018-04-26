@@ -1,0 +1,20 @@
+﻿@model UserMVC.Models.Role
+@{
+    ViewBag.Title = "Add Role";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-6">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <h2>Success</h2>
+            <table cellpadding="2" cellspacing="2">
+                <tr>
+                    <td><b>Role Name: </b></td>
+                    <td>@Model.RoleName</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -21,14 +21,14 @@ namespace UserMVC
 
             routes.MapRoute(
                 name: "Users",
-                url: "Users/Manage",
-                defaults: new { controller = "Users", action = "Manage", id = UrlParameter.Optional }
+                url: "Users/Details",
+                defaults: new { controller = "Users", action = "Details", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-                name: "Roles",
-                url: "Roles/Manage",
-                defaults: new { controller = "Roles", action = "Manage", id = UrlParameter.Optional }
+                name: "Role",
+                url: "Role/Details",
+                defaults: new { controller = "Role", action = "Details", id = UrlParameter.Optional }
             );
         }
     }

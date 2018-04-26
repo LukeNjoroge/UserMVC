@@ -1,0 +1,28 @@
+﻿@model UserMVC.Models.Role
+@{
+    ViewBag.Title = "Add Role";
+}
+<div class="row">
+    <div class="col-md-6">
+        <div class="box box-primary">
+            @using (Html.BeginForm("Register", "Role"))
+            {
+                @Html.AntiForgeryToken()
+                <div class="box-body">
+                    <table width="500">
+                        <tr>
+                            <td>@Html.LabelFor(model => model.RoleName)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.TextBoxFor(model => model.RoleName, new { placeholder = "Enter Role Name", @class = "form-control" })</td>
+                        </tr>
+                        <tr><td>&nbsp;</td></tr>
+                        <tr>
+                            <td><input type="submit" class="btn btn-primary" value="Submit" /></td>
+                        </tr>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>

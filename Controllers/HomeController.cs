@@ -26,7 +26,7 @@ namespace UserMVC.Controllers
             ViewBag.MainPage = "User Management";
             ViewBag.SubPage = "User Roles";
 
-            return RedirectToRoute("Roles");
+            return RedirectToRoute("Role");
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 namespace UserMVC.Models
 {
@@ -15,10 +11,12 @@ namespace UserMVC.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public UserMVCContext() : base("name=UserMVCContext")
+        public UserMVCContext() : base("Name=UserMVCContext")
         {
-        }
 
-        public System.Data.Entity.DbSet<UserMVC.Models.User> Users { get; set; }
+        }
+        public DbSet<User> Users { get; set; }
+
+        public DbSet<Role> Roles { get; set; }
     }
 }

@@ -34,7 +34,6 @@ c:\users\user\source\repos\UserMVC\UserMVC\bin\Microsoft.AI.DependencyCollector.
 c:\users\user\source\repos\UserMVC\UserMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
 c:\users\user\source\repos\UserMVC\UserMVC\bin\Microsoft.AI.WindowsServer.xml
 c:\users\user\source\repos\UserMVC\UserMVC\bin\Microsoft.AI.Web.xml
-c:\users\user\source\repos\UserMVC\UserMVC\obj\Debug\UserMVC.csprojResolveAssemblyReference.cache
 c:\users\user\source\repos\UserMVC\UserMVC\obj\Debug\UserMVC.csproj.CoreCompileInputs.cache
 c:\users\user\source\repos\UserMVC\UserMVC\obj\Debug\UserMVC.csproj.CopyComplete
 c:\users\user\source\repos\UserMVC\UserMVC\obj\Debug\UserMVC.dll
@@ -43,3 +42,4 @@ c:\users\user\source\repos\UserMVC\UserMVC\bin\EntityFramework.dll
 c:\users\user\source\repos\UserMVC\UserMVC\bin\EntityFramework.SqlServer.dll
 c:\users\user\source\repos\UserMVC\UserMVC\bin\EntityFramework.xml
 c:\users\user\source\repos\UserMVC\UserMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\user\source\repos\UserMVC\UserMVC\obj\Debug\UserMVC.csprojResolveAssemblyReference.cache

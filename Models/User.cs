@@ -11,9 +11,11 @@ namespace UserMVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class User
     {
+        [Key]
         public int UserID { get; set; }
         public string FullName { get; set; }
         public string PhoneNo { get; set; }

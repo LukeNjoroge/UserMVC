@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
+using UserMVC.Model;
 using UserMVC.Models;
+using UserMVC.Repository;
 
 namespace UserMVC.Controllers
 {
@@ -14,48 +13,56 @@ namespace UserMVC.Controllers
     {
         private UserMVCContext db = new UserMVCContext();
 
-        // GET: Users
-        public ActionResult Index()
+        public ActionResult Details()
         {
+            ViewBag.MainPage = "User Management";
+            ViewBag.SubPage = "Manage Users";
+
             return View(db.Users.ToList());
         }
-
-        // GET: Users/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
-        }
-
-        // GET: Users/Create
+        [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            ViewBag.MainPage = "User Management";
+            ViewBag.SubPage = "Add User";
+
+            UserViewModel uvm = new UserViewModel();
+            uvm.RoleList = db.Roles.ToList<Role>();
+
+            GenderRepository gr = new GenderRepository();
+
+            uvm.ListGender = gr.FindAll();
+            return View(uvm);
         }
 
-        // POST: Users/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserID,FullName,PhoneNo,Email,Dob,RoleID,GenderID,UserStatus")] User user)
+        public ActionResult Register(UserViewModel dbUser)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Users.Add(user);
+                User nuvm = new User();
+
+                nuvm.FullName = dbUser.UserAdd.FullName;
+                nuvm.PhoneNo = dbUser.UserAdd.PhoneNo;
+                nuvm.Email = dbUser.UserAdd.Email;
+                nuvm.Dob = dbUser.UserAdd.Dob;
+                nuvm.RoleID = dbUser.UserAdd.RoleID;
+                nuvm.GenderID = dbUser.UserAdd.GenderID;
+                nuvm.UserStatus = 1;
+
+                db.Users.Add(nuvm);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                int latestUserID = nuvm.UserID;
+            }
+            catch (Exception UserEx)
+            {
+                throw UserEx;
             }
 
-            return View(user);
+
+            return View(dbUser);
         }
 
         // GET: Users/Edit/5
@@ -73,9 +80,6 @@ namespace UserMVC.Controllers
             return View(user);
         }
 
-        // POST: Users/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "UserID,FullName,PhoneNo,Email,Dob,RoleID,GenderID,UserStatus")] User user)
@@ -104,7 +108,6 @@ namespace UserMVC.Controllers
             return View(user);
         }
 
-        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

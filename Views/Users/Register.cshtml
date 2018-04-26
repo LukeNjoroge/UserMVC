@@ -1,0 +1,40 @@
+﻿@model UserMVC.Model.UserViewModel
+@{
+    ViewBag.Title = "Add User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-6">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <h2>Success</h2>
+            <table cellpadding="2" cellspacing="2">
+                <tr>
+                    <td><b>Full Name: </b></td>
+                    <td>@Model.UserAdd.FullName</td>
+                </tr>
+                <tr>
+                    <td><b>Phone No: </b></td>
+                    <td>@Model.UserAdd.PhoneNo</td>
+                </tr>
+                <tr>
+                    <td><b>Email: </b></td>
+                    <td>@Model.UserAdd.Email</td>
+                </tr>
+                <tr>
+                    <td><b>DOB: </b></td>
+                    <td>@Model.UserAdd.Dob</td>
+                </tr>
+                <tr>
+                    <td><b>Role: </b></td>
+                    <td>@Model.UserAdd.RoleID</td>
+                </tr>
+                <tr>
+                    <td><b>Gender: </b></td>
+                    <td>@Model.UserAdd.GenderID</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

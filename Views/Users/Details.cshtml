@@ -1,75 +1,49 @@
-﻿@model UserMVC.Models.User
-
-@{
-    ViewBag.Title = "Details";
+﻿@{
+    ViewBag.Title = "User List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="box">
+    <div class="box-body">
+        <table>
+            <tr>
+                <td width="100px">
+                    <a href="~/Users/Create" class="btn btn-block btn-danger">Add User</a>
+                </td>
+            </tr>
+            <tr><td height="10px">&nbsp;</td></tr>
+        </table>
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Phone No.</th>
+                    <th>Email</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+            <tr>
 
-<h2>Details</h2>
-
-<div>
-    <h4>User</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FullName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FullName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Dob)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dob)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RoleID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RoleID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GenderID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GenderID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserStatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserStatus)
-        </dd>
-
-    </dl>
+                <td>@Html.Encode(item.FullName)</td>
+                <td>@Html.Encode(item.PhoneNo)</td>
+                <td>@Html.Encode(item.Email)</td>
+                <td>@Html.Encode(item.Dob)</td>
+                <td>@Html.Encode(item.GenderID)</td>
+                <td>@Html.Encode(item.RoleID)</td>
+                
+                <td class="btn-group" width="89%">
+                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><p>@Html.ActionLink("Edit", "Edit", new { id = item.UserID })</p></li>
+                        <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
+                    </ul>
+                </td>
+            </tr>
+            }
+        </table>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
