@@ -10,19 +10,26 @@
 namespace UserMVC.Models
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     public partial class User
     {
         [Key]
         public int UserID { get; set; }
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
+        [Display(Name = "Phone No")]
         public string PhoneNo { get; set; }
+        [Display(Name = "Email Address")]
         public string Email { get; set; }
+        [Display(Name = "DOB")]
         public System.DateTime Dob { get; set; }
+        [Display(Name = "Role Name")]
         public int RoleID { get; set; }
+        [Display(Name = "Gender")]
         public int GenderID { get; set; }
         public Nullable<int> UserStatus { get; set; }
+
+        public virtual Role RoleGet { get; set; }
     }
 }

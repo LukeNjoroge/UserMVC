@@ -26,19 +26,22 @@
             </thead>
             @foreach (var item in Model)
             {
+                string GenderName;
+                if (item.GenderID == 1){ GenderName = "Male"; }
+                else{ GenderName = "Female"; }
             <tr>
 
                 <td>@Html.Encode(item.FullName)</td>
                 <td>@Html.Encode(item.PhoneNo)</td>
                 <td>@Html.Encode(item.Email)</td>
                 <td>@Html.Encode(item.Dob)</td>
-                <td>@Html.Encode(item.GenderID)</td>
-                <td>@Html.Encode(item.RoleID)</td>
+                <td>@Html.Encode(GenderName)</td>
+                <td>@Html.Encode(item.RoleGet.RoleName)</td>
                 
                 <td class="btn-group" width="89%">
                     <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                        <li><p>@Html.ActionLink("Edit", "Edit", new { id = item.UserID })</p></li>
+                        <li>@Html.ActionLink("Edit", "Edit", new { id = item.UserID })</li>
                         <li><a data-toggle="modal" data-target="#modal-userView"> View</a></li>
                     </ul>
                 </td>

@@ -27,7 +27,7 @@
                     <td class="btn-group" width="89%">
                         <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Edit", "Edit", "Role")</li>
+                            <li>@Html.ActionLink("Edit", "Edit", new { id = item.RoleID })</li>
                         </ul>
                     </td>
                 </tr>

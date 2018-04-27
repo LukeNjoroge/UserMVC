@@ -65,7 +65,6 @@ namespace UserMVC.Controllers
             return View(dbUser);
         }
 
-        // GET: Users/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -93,7 +92,6 @@ namespace UserMVC.Controllers
             return View(user);
         }
 
-        // GET: Users/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)

@@ -1,7 +1,7 @@
-﻿using System.Linq;
+﻿using System.Data.Entity;
+using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using UserMVC.Model;
 using UserMVC.Models;
 
 namespace UserMVC.Controllers
@@ -47,24 +47,29 @@ namespace UserMVC.Controllers
 
         public ActionResult Edit(int? id)
         {
-            /*if (id == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            Role role = db.Roles.Find(id);
+            if (role == null)
             {
                 return HttpNotFound();
-            }*/
-            return View();
+            }
+            return View(role);
         }
 
-        public ActionResult Edit()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "RoleID,RoleName,RoleStatus")] Role role)
         {
-            ViewBag.MainPage = "Roles";
-            ViewBag.SubPage = "Edit User";
-
-            return View();
+            if (ModelState.IsValid)
+            {
+                db.Entry(role).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(role);
         }
     }
 }

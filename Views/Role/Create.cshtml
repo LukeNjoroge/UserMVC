@@ -11,7 +11,7 @@
                 <div class="box-body">
                     <table width="500">
                         <tr>
-                            <td>@Html.LabelFor(model => model.RoleName)</td>
+                            <td>@Html.LabelFor(model => model.RoleName, new { colspan = "2" })</td>
                         </tr>
                         <tr>
                             <td>@Html.TextBoxFor(model => model.RoleName, new { placeholder = "Enter Role Name", @class = "form-control" })</td>

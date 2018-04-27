@@ -16,10 +16,10 @@
                 <div class="box-body">
                     <table width="500">
                         <tr>
-                            <td>@Html.LabelFor(model => model.UserAdd.FullName)</td>
+                            <td>@Html.LabelFor(model => model.UserAdd.FullName, new { colspan = "2" })</td>
                         </tr>
                         <tr>
-                            <td>@Html.TextBoxFor(model => model.UserAdd.FullName, new { placeholder = "Enter Full Name", @class = "form-control" })</td>
+                            <td>@Html.TextBoxFor(model => model.UserAdd.FullName, new { placeholder = "Enter Full Name", @class = "form-control", colspan = "2" })</td>
                         </tr>
 
                         <tr>
